@@ -1,0 +1,14 @@
+/**
+ * Svg görseller seçilebilirdi, bu da özellikle fiyat maddesini kopyalarken
+ * engel teşkil ediyordu hızlı bir düzeltme yapıldı. 
+ */
+img {
+  user-select: none;
+}
+
+/**
+ * Dosyalamamda section için özel bir yer henüz bulamadım.
+ */
+section {
+  @include margin(2.5rem auto);
+}
