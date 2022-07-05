@@ -12,6 +12,7 @@
 
   &-2 {
     width: min(100% - 2rem, 36.25rem); // 580px - Pc / 507,5px - Mobile
+    margin-inline: auto;
   }
 }
 
