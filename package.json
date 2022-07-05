@@ -1,0 +1,30 @@
+{
+	"name": "pricing-page",
+	"version": "0.0.1",
+	"description": "pricing-page",
+	"scripts": {
+		"sass-doc": "sassdoc src/scss",
+		"sass-build": "sass scss/main.scss css/main.min.css --style compressed --no-error-css",
+		"sass-watch": "sass --watch scss/main.scss css/main.min.css --style expanded --error-css",
+		"parcel-watch": "parcel watch src/*.html --public-url ./ --no-source-maps",
+		"parcel-dev": "parcel src/*.html --open --no-cache --no-source-maps",
+		"parcel-build": "parcel build src/*.html --public-url ./ --no-source-maps"
+	},
+	"keywords": [
+		"scss",
+		"javascript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/drementer/dred.git"
+	},
+	"bugs": {
+		"url": "https://github.com/drementer/dred/issues"
+	},
+	"author": "drementer <klncarslanburak@gmail.com> (https://github.com/drementer)",
+	"license": "MIT",
+	"dependencies": {
+		"sass": "^1.53.0",
+		"sassdoc": "^2.7.4"
+	}
+}
