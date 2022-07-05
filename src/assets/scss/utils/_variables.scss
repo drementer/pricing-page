@@ -18,6 +18,18 @@ $font-listesi: (
 ) !default;
 // ------------------------------------------------------------------
 
+// ------------------------- Display --------------------------------
+
+/// Display modlarini açıp kapatmak için kullanılır.
+///
+/// @type boolen
+$display-modlari-acik: true !default;
+
+/// @type map | list
+$display-listesi: 'block', 'inline', 'inline-block', 'flex', 'inline-flex',
+  'initial', 'none' !default;
+// ------------------------------------------------------------------
+
 // ------------------------- z-index --------------------------------
 
 /// @type list
@@ -61,7 +73,9 @@ $ana-renk: hsl(242, 70%, 51%) !default;
 $ana-renk--400: hsl(230, 100%, 67%) !default;
 $ana-renk--700: hsl(231, 63%, 12%) !default;
 
-$metin: #A0ABB8 !default;
+$metin: hsl(213, 14%, 67%) !default;
+
+$siyah: hsl(0, 0%, 0%) !default;
 
 $gri: hsl(213, 14%, 67%) !default;
 $kirmizi: hsl(354, 99%, 66%) !default;
