@@ -4,6 +4,12 @@
   top: 0;
   width: 100%;
   background-color: $beyaz;
+  border-bottom: 1px solid transparent;
+  transition: border-color .6s cubic-bezier(0.19, 1, 0.22, 1);
+
+  &--aktif {
+    border-color: tint($ana-renk--400, 20%);
+  }
 
   &__icerik {
     @include flex-row;
