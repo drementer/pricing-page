@@ -1,6 +1,6 @@
 .nav {
   @include flex-row-center;
-  gap: 2.25rem;
+  /* gap: 2.25rem; */
   width: fit-content;
 
   .buton--link {
