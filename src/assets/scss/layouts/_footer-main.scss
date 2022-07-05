@@ -4,6 +4,10 @@
   &__icerik {
     @include flex-row;
     align-items: stretch;
+
+    @include medya(sm) {
+      @include flex-column;
+    }
   }
 
   .kolon {
@@ -20,11 +24,18 @@
 
   &__nav {
     @include flex-column;
+    align-items: flex-start;
 
-    align-items: flex-end;
+    @include min-medya(sm) {
+      align-items: flex-end;
+    }
 
     .buton {
       color: $siyah;
+
+      @include min-medya(sm) {
+        align-items: flex-end;
+      }
     }
   }
 

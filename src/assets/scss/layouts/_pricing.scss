@@ -14,9 +14,14 @@
     }
   }
 
-  &__kartlar{
+  &__kartlar {
     @include flex-row;
     align-items: flex-start;
     gap: 1.5rem;
+
+    @include medya(lg) {
+      flex-wrap: wrap;
+      align-items: center;
+    }
   }
 }

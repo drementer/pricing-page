@@ -8,6 +8,15 @@
   gap: 1.5rem;
   background-color: $beyaz;
 
+  @include aralik-medya(md, lg) {
+    width: calc(50% - (1.5rem / 2));
+    margin: auto;
+  }
+
+  @include medya(lg) {
+    margin: auto;
+  }
+
   $renk: $gri;
 
   --baslik-rengi: #{hsl-to-rgb($renk)};

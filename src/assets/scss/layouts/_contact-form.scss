@@ -1,14 +1,25 @@
-.contact-form{
+.contact-form {
   @include flex-column;
 
-  .satir{
+  .satir {
     @include flex-row;
-    gap: 1.25rem;
+    gap: 8px;
+
+    @include medya(md) {
+      @include flex-column;
+    }
+
+    @include min-medya(md) {
+      gap: 1.25rem;
+    }
   }
 
-  .kolon{
+  .kolon {
     @include flex-column;
     gap: 8px;
-    width: 50%;
+
+    @include min-medya(md) {
+      width: 50%;
+    }
   }
 }
