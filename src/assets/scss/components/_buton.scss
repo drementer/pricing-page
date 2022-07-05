@@ -18,6 +18,12 @@
   &--link {
     @extend .buton;
 
+    /**  
+     * `%golge-2`den gelen gölge kapatıldı
+    */
+    box-shadow: unset;
+    filter: unset;
+
     font-weight: 400;
     color: $ana-renk;
     background-color: transparent;
