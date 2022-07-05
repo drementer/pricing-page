@@ -1,0 +1,71 @@
+.pricing-kart {
+  @include flex-column;
+  @include padding(2.5rem 1.5rem);
+  @extend %golge;
+
+  border-radius: 8px;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: $beyaz;
+
+  $renk: $gri;
+
+  --baslik-rengi: #{hsl-to-rgb($renk)};
+  --detay-arkaplan: #{rgba(hsl-to-rgb($renk), 0.05)};
+
+  &--supportive {
+    $renk: $ana-renk--400;
+
+    --baslik-rengi: #{hsl-to-rgb($renk)};
+    --detay-arkaplan: #{rgba(hsl-to-rgb($renk), 0.05)};
+  }
+
+  &--full {
+    $renk: $ana-renk;
+
+    --baslik-rengi: #{hsl-to-rgb($ana-renk)};
+    --detay-arkaplan: #{rgba(hsl-to-rgb($renk), 0.05)};
+  }
+
+  h2,
+  &__baslik {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--baslik-rengi);
+  }
+
+  span {
+    color: $gri;
+    font-weight: 500;
+    @include font-size(0.875rem);
+
+    span {
+      color: var(--baslik-rengi);
+    }
+  }
+
+  &__icerik {
+    @include flex-column;
+    gap: 1.5rem;
+  }
+
+  &__madde {
+    @include flex-row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  &__detay {
+    text-align: center;
+    @include padding(1rem 1.875rem);
+    border-radius: inherit;
+    background-color: var(--detay-arkaplan);
+
+    h2 {
+      @include font-size(1.25rem);
+      margin-top: 6px;
+    }
+  }
+}
