@@ -1,0 +1,25 @@
+.contact-us {
+  @include padding(7.5rem 0);
+  @include margin-top(5rem);
+  background-color: $ana-renk--600;
+  color: $ana-renk;
+
+  p {
+    @include font-size(1rem);
+    color: $beyaz;
+  }
+
+  &__hero {
+    text-align: center;
+  }
+
+  &__adres {
+    width: 100%;
+    text-align: center;
+
+    .buton {
+      color: $gri;
+      font-size: 12px;
+    }
+  }
+}

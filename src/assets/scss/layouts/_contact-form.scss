@@ -1,0 +1,14 @@
+.contact-form{
+  @include flex-column;
+
+  .satir{
+    @include flex-row;
+    gap: 1.25rem;
+  }
+
+  .kolon{
+    @include flex-column;
+    gap: 8px;
+    width: 50%;
+  }
+}
