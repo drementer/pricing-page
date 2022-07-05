@@ -1,0 +1,39 @@
+.footer-main {
+  @include padding(3rem 0);
+
+  &__icerik {
+    @include flex-row;
+    align-items: stretch;
+  }
+
+  .kolon {
+    @include flex-row;
+
+    width: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &:first-child {
+      @include flex-column;
+    }
+  }
+
+  &__nav {
+    @include flex-column;
+
+    align-items: flex-end;
+
+    .buton {
+      color: $siyah;
+    }
+  }
+
+  &__aciklama {
+    max-width: 20rem;
+  }
+
+  &__aciklama,
+  &__cc {
+    color: $gri;
+  }
+}
