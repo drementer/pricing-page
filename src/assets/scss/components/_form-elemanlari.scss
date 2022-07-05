@@ -2,7 +2,7 @@ textarea {
   height: max-content;
   resize: none;
   overflow-y: hidden;
-  min-height: 70px !important;
+  min-height: 88px !important;
 
   &::-webkit-scrollbar {
     display: none !important;
@@ -11,4 +11,18 @@ textarea {
   &::-moz-scrollbar {
     display: none !important;
   }
+}
+
+input,
+textarea,
+select {
+  border: 1px solid $gri;
+  border-radius: 6px;
+  @include font-size(0.75rem);
+  @include padding(0.5rem 0.75rem);
+}
+
+::placeholder {
+  color: $gri;
+  opacity: 1;
 }
