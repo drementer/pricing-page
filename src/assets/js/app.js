@@ -25,15 +25,15 @@ textarealar.forEach((textarea) => {
 });
 /* Textarea SON */
 
-/* Dil Değiştir Buton */
-const dil_butonlar = doc.querySelectorAll(".dil__buton");
-let aktif_dil_buton;
-dil_butonlar.forEach((buton) => {
+/* translate Değiştir Buton */
+const translate_butonlar = doc.querySelectorAll(".translate__buton");
+let aktif_translate_buton;
+translate_butonlar.forEach((buton) => {
 	buton.addEventListener("click", () => {
-		aktif_dil_buton = doc.querySelector(".dil__buton--aktif");
-		aktif_dil_buton.classList.remove("dil__buton--aktif");
+		aktif_translate_buton = doc.querySelector(".translate__buton--aktif");
+		aktif_translate_buton.classList.remove("translate__buton--aktif");
 
-		buton.classList.add("dil__buton--aktif");
+		buton.classList.add("translate__buton--aktif");
 	});
 });
-/* Dil Değiştir Buton SON */
+/* translate Değiştir Buton SON */
