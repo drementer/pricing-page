@@ -1,5 +1,5 @@
 // İmportlar
-import { scroll_ac, scroll_kapat, log, doc, body } from "./scripts/_utils.js";
+import { scroll_ac, scroll_kapat, log, doc, body } from "./_utils.js";
 
 /* Textarea */
 const ta_hizala = (element) => {
