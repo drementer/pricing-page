@@ -3,8 +3,8 @@
   box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05);
 }
 
-/// Varsayılan gölge ayarı (filtre opsiyonu)
-%golge--filter {
+/// Gölge ayarı 2
+%golge-2 {
   filter: drop-shadow(0px 8px 16px hsla(242, 70%, 51%, 0.32));
 }
 
