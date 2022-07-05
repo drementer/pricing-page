@@ -20,7 +20,7 @@ select {
   border-radius: 6px;
   outline: 0;
   @include font-size(0.75rem);
-  @include padding(0.5rem 0.75rem);
+  @include padding(0.6rem 0.75rem);
 }
 
 ::placeholder {
