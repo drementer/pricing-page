@@ -2,8 +2,12 @@
   display: none !important;
 }
 
+@if $display-modlari-acik {
+  @include display();
+}
+
 .konteyner {
-  width: min(100% - 2rem, 85.5rem);
+  width: min(100% - 2rem, 73.75rem); // 1180px - Pc / 1.032,5px - Mobile
   margin-inline: auto;
 }
 
