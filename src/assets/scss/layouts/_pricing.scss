@@ -1,0 +1,22 @@
+.pricing {
+  &__hero {
+    :is(h2, p) {
+      text-align: center;
+    }
+
+    h2 {
+      color: $ana-renk;
+    }
+
+    p {
+      @include font-size(1.5rem);
+      color: $gri;
+    }
+  }
+
+  &__kartlar{
+    @include flex-row;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
