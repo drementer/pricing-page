@@ -48,6 +48,8 @@ section {
 /**  
  * Buton içindeki ikon boyutu manuel değiştirildi
  */
-ion-icon {
-  font-size: 3rem;
+.buton--hayalet {
+  img{
+    width: 3rem;
+  }
 }
