@@ -23,6 +23,9 @@ p {
 
 @include font-sizes($font-listesi);
 
+/**
+ * Eğer görsel yüklenemedi ise görselin `alt` attr'sinin ekrandaki görünümü
+ */
 img {
   @include font-size(20px);
   font-family: 'Inter', sans-serif;
