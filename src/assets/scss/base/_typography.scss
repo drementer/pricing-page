@@ -13,10 +13,19 @@ html {
   }
 }
 
+h2 {
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+}
+
 @include font-sizes($font-listesi);
 
 img {
   @include font-size(20px);
   font-family: 'Inter', sans-serif;
   text-decoration: none;
+  font-weight: 400;
 }
