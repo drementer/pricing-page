@@ -1,5 +1,5 @@
 .buton {
-  @include padding(0.5rem 1rem);
+  @include padding(0.5rem 1.5rem);
   @include margin(0.5rem);
   @include font-size(1rem);
   @extend %buton;
@@ -14,6 +14,9 @@
   background-color: $ana-renk;
   border-radius: 4px;
   font-weight: 600;
+  gap: .7rem;
+  align-items: center;
+
 
   &--link {
     @extend .buton;
