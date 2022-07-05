@@ -2,6 +2,8 @@
   margin-left: 3.5rem;
   &__buton {
     @include font-size(0.875rem);
+    @include padding(0.5rem);
+
     font-weight: 400;
     color: rgba($gri, $alpha: 0.6);
 
@@ -9,9 +11,5 @@
       font-weight: 600;
       color: $ana-renk;
     }
-  }
-
-  &__buton + &__buton {
-    margin-left: 6px;
   }
 }
