@@ -14,9 +14,12 @@
   background-color: $ana-renk;
   border-radius: 4px;
   font-weight: 600;
-  gap: .7rem;
+  gap: 0.7rem;
   align-items: center;
 
+  @include on-event() {
+    background-color: shade($ana-renk, 10%);
+  }
 
   &--link {
     @extend .buton;
@@ -31,6 +34,12 @@
     color: $ana-renk;
     background-color: transparent;
     margin: 0;
-    padding: 0;
+    @include padding(0.5rem 1rem);
+
+    /*  padding: 0; */
+
+    @include on-event() {
+      background-color: rgba($ana-renk, $alpha: 0.05);
+    }
   }
 }
