@@ -36,3 +36,12 @@ img {
 section {
   @include margin(2.5rem auto);
 }
+
+
+/**  
+ * Hızlıca seçim rengi belirlendi
+ */
+::selection{
+  color: $beyaz;
+  background-color: $ana-renk--400;
+}
