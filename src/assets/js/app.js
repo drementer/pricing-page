@@ -1,5 +1,12 @@
-// İmportlar
-import { scroll_ac, scroll_kapat, log, doc, body } from "./_utils.js";
+const doc = document,
+	body = doc.body;
+
+const scroll_kapat = () => {
+		doc.querySelector("body").style.overflowY = "hidden";
+	},
+	scroll_ac = () => {
+		doc.querySelector("body").style.overflowY = "auto";
+	};
 
 /* Textarea */
 const ta_hizala = (element) => {
@@ -30,12 +37,11 @@ const translate_butonlar = doc.querySelectorAll(".translate__buton");
 let secilen_dil;
 translate_butonlar.forEach((buton) => {
 	buton.addEventListener("click", () => {
-
 		// Tıklanan butonun `data-dil` attr'si alınıyor
 		secilen_dil = buton.dataset.dil;
 
 		// Tüm aktif butonlar kapatılıyor
-		translate_butonlar.forEach((buton) => { 
+		translate_butonlar.forEach((buton) => {
 			buton.classList.remove("translate__buton--aktif");
 		});
 
