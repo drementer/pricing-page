@@ -3,6 +3,7 @@
   @include margin(0.5rem);
   @include font-size(1rem);
   @extend %buton;
+  @extend %golge-2;
 
   display: inline-flex;
   justify-content: center;
@@ -12,13 +13,12 @@
   color: $beyaz;
   background-color: $ana-renk;
   border-radius: 4px;
-  font-weight: 400;
-
-  @extend %golge-2;
+  font-weight: 600;
 
   &--link {
     @extend .buton;
 
+    font-weight: 400;
     color: $ana-renk;
     background-color: transparent;
     margin: 0;
