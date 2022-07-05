@@ -25,7 +25,7 @@ textarealar.forEach((textarea) => {
 });
 /* Textarea SON */
 
-/* translate Değiştir Buton */
+/* Translate Buton */
 const translate_butonlar = doc.querySelectorAll(".translate__buton");
 let aktif_translate_buton;
 translate_butonlar.forEach((buton) => {
@@ -36,4 +36,4 @@ translate_butonlar.forEach((buton) => {
 		buton.classList.add("translate__buton--aktif");
 	});
 });
-/* translate Değiştir Buton SON */
+/* Translate Buton SON */
