@@ -1,7 +1,7 @@
 .buton {
   @include padding(0.5rem 1rem);
   @include margin(0.5rem);
-  @include font-size(1.2rem);
+  @include font-size(1rem);
   @extend %buton;
 
   display: inline-flex;
@@ -11,65 +11,17 @@
   border: 1px solid transparent;
   color: $beyaz;
   background-color: $ana-renk;
+  border-radius: 4px;
+  font-weight: 400;
 
-  &:hover {
-    background-color: $ana-renk;
-  }
+  @extend %golge-2;
 
-  &-2 {
-    @extend .buton;
-
-    color: $ana-renk;
-    background-color: transparent;
-    border-color: currentColor;
-
-    &:hover {
-      color: $beyaz;
-      background-color: $ana-renk;
-    }
-  }
-
-  &-hayalet {
-    @extend .buton;
-
-    color: $ana-renk;
-    background-color: transparent;
-
-    &:hover {
-      background-color: transparent;
-      border-color: currentColor;
-    }
-  }
-
-  &-link {
+  &--link {
     @extend .buton;
 
     color: $ana-renk;
     background-color: transparent;
     margin: 0;
     padding: 0;
-
-  /* &::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    opacity: 0;
-  } */
-
-    &:hover {
-      background-color: transparent;
-      text-decoration: underline;
-      /* &::after {
-        opacity: 1;
-      } */
-    }
-  }
-
-  &#{&}--buyuk {
-    @include font-size(1.5rem);
   }
 }
