@@ -1,0 +1,77 @@
+// ------------------------- Typografi ------------------------------
+
+/// @type string | list
+$root-font-family: 'Fira Code' !default;
+
+/// @type stirng
+$root-font-size: 16px !default;
+
+/// @type stirng
+/// @alias root-font-size
+$root-font-size--mobil: 14px !default;
+
+/// 1.250 Major Third
+///
+/// @type map
+///
+/// @link https://type-scale.com/
+$font-listesi: (
+  'h1': 3.815,
+  'h2': 3.052,
+  'h3': 2.441,
+  'h4': 1.953,
+  'h5': 1.563,
+  'h6': 1.25,
+  'p': 1,
+  'label': 0.875,
+) !default;
+// ------------------------------------------------------------------
+
+// ------------------------- z-index --------------------------------
+
+/// @type list
+$z-index-listesi: '.loader', '.modal', '.popup', '.go-top', '.nav' !default;
+// ------------------------------------------------------------------
+
+// ------------------------- Medya ----------------------------------
+
+/// @group medya
+/// @type map
+/// @require {function} px2em
+///
+/// @example scss - Px ile kullanım
+///   $medya-boyutlari: (
+///    'xs': 360px,
+///    'sm': 576px
+///   ) !default;
+///
+/// @example scss - Em ile kullanım
+///   $medya-boyutlari: (
+///    'xs': px2em(360),
+///    'sm': px2em(768)
+///   ) !default;
+///
+$medya-boyutlari: (
+  xs: px2em(360px),
+  sm: px2em(576px),
+  md: px2em(768px),
+  lg: px2em(992px),
+  xl: px2em(1200px),
+  ul: px2em(1400px),
+) !default;
+
+// ------------------------------------------------------------------
+
+// ------------------------- Renk Paleti ----------------------------
+
+$beyaz: hsl(0, 0%, 100%) !default;
+
+$ana-renk: hsl(242, 70%, 51%) !default;
+$ana-renk--400: hsl(230, 100%, 67%) !default;
+$ana-renk--700: hsl(231, 63%, 12%) !default;
+
+$metin: #A0ABB8 !default;
+
+$gri: hsl(213, 14%, 67%) !default;
+$kirmizi: hsl(354, 99%, 66%) !default;
+// ------------------------------------------------------------------

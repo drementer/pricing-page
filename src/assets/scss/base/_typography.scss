@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code:300,regular,500,600,700');
+
+html {
+  font-family: $root-font-family;
+  font-size: $root-font-size;
+
+  @include medya(lg) {
+    font-size: $root-font-size--mobil;
+  }
+}
+
+@include font-sizes($font-listesi);

@@ -1,0 +1,226 @@
+/// Temaya özel still ayarlarını yapar
+///
+/// @param {string} $tema [default] - Tema ismi
+/// 
+/// @example scss
+///   .foo {
+///      @include tema() {
+///        color: black;
+///     }
+///   }
+/// 
+/// @example scss
+///   .foo {
+///      @include tema(dark) {
+///        color: white;
+///     }
+///   }
+///
+@mixin tema($tema: 'default') {
+  @at-root html[data-theme='#{$tema}'] #{&} {
+    @content;
+  }
+}
+
+/// Elementin arkaplan resmini ayarlar
+///
+/// @param {string} $url - Resim (url/dosya yolu)
+/// @param {string | number} $size [cover] - Resim boyutu
+/// @param {string | number} $position [center]  - Resim konumu
+/// @param {string} $repeat [no-repeat] - Resmin tekrar edip etmeyeceğini belirler
+///
+@mixin arkaplan($url, $size: cover, $position: center, $repeat: no-repeat) {
+  background-image: $url;
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+/// Elementin maksimum kaç satır olacağını belirler
+/// Eğer maksimum satır aşılır ise fazla satırları kesip
+/// son satırın sonuna "..." koyar
+///
+/// @param {number} $max-satir [2] - Maksimum satır sayısı
+/// 
+/// @example scss
+///  .foo {
+///    @include truncate();
+///  }
+///
+@mixin truncate($max-satir: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $max-satir;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/// Elementin maksimum kaç satır olacağını belirler
+/// Eğer maksimum satır aşılır ise fazla satırları kesip
+/// son satıra linear gradient ile şeffaflık yapar
+///
+/// @param {number} $max-satir [2] - Maksimum satır sayısı
+/// @param {string} $arkaplan-rengi [#fff] - Gradient rengi
+///
+@mixin truncate-2($max-satir: 2, $arkaplan-rengi: #fff) {
+  $font-size: 1em;
+  $line-height: $font-size * $root-line-height;
+
+  line-height: $line-height;
+  height: $max-satir * $line-height;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: $line-height;
+    width: 75%;
+
+    background: linear-gradient(90deg, transparent, $arkaplan-rengi);
+  }
+}
+
+/// Elemnt için varsayılan animasyon ayarlarını yapar
+///
+/// @param {boolen} $backface [true] - Backface-visibility özelliğini belirler
+/// @param {number} $perspective [1000] - Elementin perspective özelliğini belirler
+///
+@mixin animasyon($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}
+
+/// Liste elemanlarının z-index hiyerarşisini belirler
+/// z-index değeri 99'dan liste ise ilk elemanından
+/// başlıyor ve her seferinde z-index 1 azaltılarak
+/// liste elemanı ise 1 arttırılarak devam ediyor
+///
+/// @param {list} $liste - z-index verilecek elemanlar
+/// @param {string} $eleman - $liste elemanı
+/// @param {number} $z-index [99] - z-index başlangıç değeri
+///
+/// @example scss - Basit kullanım
+///   $liste: ".elm1", ".elm2";
+///   @include z-index($liste);
+///
+/// @example css - Output css 
+///   .elm1 { z-index: 99; } .elm2 { z-index: 98; }
+///
+/// @example scss - Varyant algılama
+///   $liste: ".buton";
+///   .buton{
+///   	color: red;
+///   	&-2{
+///   		color: blue;
+///   	}
+///   }
+///   @include z-index($liste);
+///
+/// @example css - Output css  
+///   .buton, .buton-2 { z-index: 99; }
+///
+/// @example scss - Ortak z-index değeri
+///   $liste: ".elm, .elm2, .elm3 ";
+///   @include z-index($liste);
+///
+/// @example css - Output css 
+///   .elm, .elm2, .elm3 { z-index: 99; }
+///
+@mixin z-index($liste, $z-index: 99) {
+  @each $eleman in $liste {
+    #{$eleman} {
+      z-index: $z-index;
+    }
+    $z-index: $z-index - 1;
+  }
+}
+
+/// @param {Bool} $self [false] - Whether or not to include current selector
+///
+/// @author Harry Roberts
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+///
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+///
+/// @author Hugo Giraudel
+///
+/// @param {String} $context
+///
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Font boyutlarını hızlı şekilde ayarlamak için
+///
+/// @param {map} $font-listesi - Font boyutlarının listesi
+/// @param {string} $eleman - Liste elemanı
+/// @param {number} $font-degeri - Font değeri
+///
+/// @example scss - Basit kullanım
+///   $font-listesi: (
+///     ".elm1": 1,
+///     ".elm2": 1.2,
+///   );
+///   @include font-size($font-listesi);
+///
+/// @example css - Output css 
+///   .elm1 { font-size: 1rem; } .elm2 { font-size: 1.2rem; }
+///
+@mixin font-sizes($font-listesi) {
+  @each $eleman, $font-degeri in $font-listesi {
+    #{$eleman} {
+      @include font-size($font-degeri * 1rem);
+    }
+  }
+}
+
+/// Display özelliğini class kullanarak ayarlamak için
+/// 
+/// @param {map | list} $display-listesi - Display özelliklerinin listesi
+/// @param {string} $$display-eleman - Liste elemanı
+/// @param {string} $medya-boyutlari [$medya-boyutlari] - Medya boyutları
+/// 
+/// @require {variable} $medya-boyutlari
+/// @require {mixin} medya
+///
+@mixin display($medya-boyutlari: $medya-boyutlari) {
+  @each $display-eleman in $display-listesi {
+    // Normal Modlar
+    .d-#{$display-eleman} {
+      display: #{$display-eleman} !important;
+    }
+
+    // Responsive modlar
+    @each $medya-ismi, $medya-boyutu in $medya-boyutlari {
+      .d-#{$medya-ismi}-#{$display-eleman} {
+        @include medya($medya-ismi) {
+          display: #{$display-eleman} !important;
+        }
+      }
+    }
+  }
+}

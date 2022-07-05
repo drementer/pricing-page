@@ -1,0 +1,14 @@
+textarea {
+  height: max-content;
+  resize: none;
+  overflow-y: hidden;
+  min-height: 70px !important;
+
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  &::-moz-scrollbar {
+    display: none !important;
+  }
+}

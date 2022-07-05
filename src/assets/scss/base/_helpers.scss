@@ -1,0 +1,60 @@
+[kapali] {
+  display: none !important;
+}
+
+.konteyner {
+  width: min(100% - 2rem, 85.5rem);
+  margin-inline: auto;
+}
+
+/**
+ * Overflow hatalarını çözümlemek için her dom elemanına arkaplan veriliyor 
+ * ve hoverda arkaplan yoğunlaştırılıp outline ekleniyor bu 
+ * sayede hangi eleman overflow hatası olduğu belirleniyor.
+ *
+ * https://www.youtube.com/shorts/ii-lSK2_Nu4 - Kewin Powell'ın videosu
+ */
+.hata-ayiklama {
+  * {
+    outline: 1px solid transparent !important;
+    border-radius: 0;
+    background-color: rgba(0, 100, 0, 0.1) !important;
+
+    &:hover {
+      outline-color: rgb(0, 0, 0) !important;
+      background-color: rgba(0, 100, 0, 0.15) !important;
+    }
+  }
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.text-truncate,
+.truncate {
+  @include truncate();
+}

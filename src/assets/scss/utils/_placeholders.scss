@@ -1,0 +1,40 @@
+/// Varsayılan gölge ayarı
+%golge {
+  box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.014),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+    30.1px 30.1px 24.1px rgba(0, 0, 0, 0.026),
+    100px 100px 80px rgba(0, 0, 0, 0.04);
+}
+
+/// Butonlar için hızlı reset
+%buton {
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: capitalize;
+  outline: none;
+  cursor: pointer;
+}
+
+/// Flex start
+/// @group flex
+%flex-start {
+  align-items: start;
+  align-content: start;
+  justify-content: start;
+}
+
+/// Flex center
+/// @group flex
+%flex-center {
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/// Flex end
+/// @group flex
+%flex-end {
+  align-items: end;
+  align-content: end;
+  justify-content: end;
+}
