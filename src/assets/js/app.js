@@ -37,3 +37,22 @@ translate_butonlar.forEach((buton) => {
 	});
 });
 /* Translate Buton SON */
+
+/* Header */
+const header = doc.querySelector(".header");
+const header_kontrol = () => {
+	if (window.scrollY > 0) {
+		header.classList.add("header--aktif");
+	} else {
+		header.classList.remove("header--aktif");
+	}
+};
+
+// Sayfa yüklendiğinde
+header_kontrol();
+
+// Scroll Event
+window.addEventListener("scroll", () => {
+	header_kontrol();
+});
+/* Header SON */
