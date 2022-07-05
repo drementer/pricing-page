@@ -24,3 +24,16 @@ textarealar.forEach((textarea) => {
 	textarea.onload = ta_hizala(textarea);
 });
 /* Textarea SON */
+
+/* Dil Değiştir Buton */
+const dil_butonlar = doc.querySelectorAll(".dil__buton");
+let aktif_dil_buton;
+dil_butonlar.forEach((buton) => {
+	buton.addEventListener("click", () => {
+		aktif_dil_buton = doc.querySelector(".dil__buton--aktif");
+		aktif_dil_buton.classList.remove("dil__buton--aktif");
+
+		buton.classList.add("dil__buton--aktif");
+	});
+});
+/* Dil Değiştir Buton SON */
