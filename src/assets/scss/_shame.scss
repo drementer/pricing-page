@@ -9,6 +9,9 @@ img {
 /**  
  * Chrome, Safari ve Opera için eğer resim yüklenemesse `Broken Icon`ı ekranda gizleyip
  * yerine görselin `alt` attr'sini gösteriyorum.
+ *
+ * https://stackoverflow.com/questions/22051573/how-to-hide-image-broken-icon-using-only-css-html
+ *
  */
 img {
   position: relative;
