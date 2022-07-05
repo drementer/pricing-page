@@ -1,0 +1,21 @@
+.header {
+  height: 88px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $beyaz;
+
+  &__icerik {
+    @include flex-row;
+    align-items: center;
+    height: 100%;
+  }
+
+  .kolon {
+    flex-grow: 1;
+  }
+
+  &__brand-logo.buton {
+    color: $siyah;
+  }
+}
