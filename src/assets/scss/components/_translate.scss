@@ -1,5 +1,7 @@
 .translate {
   margin-left: 3.5rem;
+  @include flex-row-center;
+
   &__buton {
     @include font-size(0.875rem);
     @include padding(0.5rem);
@@ -11,5 +13,9 @@
       font-weight: 600;
       color: $ana-renk;
     }
+  }
+
+  @include medya(md) {
+    display: none;
   }
 }

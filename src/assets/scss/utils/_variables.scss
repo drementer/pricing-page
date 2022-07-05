@@ -33,7 +33,7 @@ $display-listesi: 'block', 'inline', 'inline-block', 'flex', 'inline-flex',
 // ------------------------- z-index --------------------------------
 
 /// @type list
-$z-index-listesi: '#header', '.popup', 'img' !default;
+$z-index-listesi: '.mobil-nav', '#header', '.popup', 'img' !default;
 // ------------------------------------------------------------------
 
 // ------------------------- Medya ----------------------------------

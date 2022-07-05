@@ -42,4 +42,10 @@
       background-color: rgba($ana-renk, $alpha: 0.05);
     }
   }
+
+  &--hayalet {
+    padding: 0;
+    background-color: transparent !important;
+    color: $siyah;
+  }
 }

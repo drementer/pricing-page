@@ -2,7 +2,58 @@
   @include flex-row-center;
   width: fit-content;
 
-  .buton--link {
+  .buton {
     @include font-size(0.875rem);
+  }
+}
+.mobil-nav {
+  @include medya(md) {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    min-height: calc(100vh - calc(100vh - 100%));
+    background-color: $beyaz;
+
+    @include padding(3rem 1rem);
+
+    @include flex-column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateX(100%);
+    pointer-events: none;
+
+    .buton {
+      @include font-size(3rem);
+    }
+  }
+
+  &[acik] {
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__ac-tus,
+  &__kapat-tus {
+    @include min-medya(md) {
+      display: none !important;
+    }
+  }
+
+  &__kapat-tus {
+    position: absolute !important;
+    z-index: 1;
+    top: 1.5rem;
+    right: 1rem;
+  }
+
+  &__translate {
+    display: flex !important;
+
+    @include min-medya(md) {
+      display: none !important;
+    }
   }
 }

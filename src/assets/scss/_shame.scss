@@ -37,11 +37,17 @@ section {
   @include margin(2.5rem auto);
 }
 
-
 /**  
  * Hızlıca seçim rengi belirlendi
  */
-::selection{
+::selection {
   color: $beyaz;
   background-color: $ana-renk--400;
+}
+
+/**  
+ * Buton içindeki ikon boyutu manuel değiştirildi
+ */
+ion-icon {
+  font-size: 3rem;
 }

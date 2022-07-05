@@ -27,13 +27,22 @@ textarealar.forEach((textarea) => {
 
 /* Translate Buton */
 const translate_butonlar = doc.querySelectorAll(".translate__buton");
-let aktif_translate_buton;
+let secilen_dil;
 translate_butonlar.forEach((buton) => {
 	buton.addEventListener("click", () => {
-		aktif_translate_buton = doc.querySelector(".translate__buton--aktif");
-		aktif_translate_buton.classList.remove("translate__buton--aktif");
 
-		buton.classList.add("translate__buton--aktif");
+		// Tıklanan butonun `data-dil` attr'si alınıyor
+		secilen_dil = buton.dataset.dil;
+
+		// Tüm aktif butonlar kapatılıyor
+		translate_butonlar.forEach((buton) => { 
+			buton.classList.remove("translate__buton--aktif");
+		});
+
+		// `data-dil` attr'si eşleşen tüm butonlar aktif ediliyor
+		doc.querySelectorAll(`[data-dil=${secilen_dil}]`).forEach((buton) => {
+			buton.classList.add("translate__buton--aktif");
+		});
 	});
 });
 /* Translate Buton SON */
@@ -56,3 +65,19 @@ window.addEventListener("scroll", () => {
 	header_kontrol();
 });
 /* Header SON */
+
+/* Mobil Nav */
+const mobil_nav = doc.querySelector(".mobil-nav");
+const mobil_nav__ac_tus = doc.querySelector(".mobil-nav__ac-tus");
+const mobil_nav__kapat_tus = doc.querySelector(".mobil-nav__kapat-tus");
+
+mobil_nav__ac_tus.addEventListener("click", () => {
+	mobil_nav.setAttribute("acik", "");
+	scroll_kapat();
+});
+
+mobil_nav__kapat_tus.addEventListener("click", () => {
+	mobil_nav.removeAttribute("acik", "");
+	scroll_ac();
+});
+/* Mobil Nav SON */
