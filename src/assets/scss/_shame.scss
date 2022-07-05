@@ -6,6 +6,27 @@ img {
   user-select: none;
 }
 
+/**  
+ * Chrome, Safari ve Opera için eğer resim yüklenemesse `Broken Icon`ı ekranda gizleyip
+ * yerine görselin `alt` attr'sini gösteriyorum.
+ */
+img {
+  position: relative;
+
+  &[alt]:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    font-weight: inherit;
+    text-align: center;
+    content: attr(alt);
+  }
+}
+
 /**
  * Dosyalamamda section için özel bir yer henüz bulamadım.
  */
